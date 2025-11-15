@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "echo.> dist/.nojekyll",
+    "postbuild": "node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
