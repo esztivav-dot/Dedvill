@@ -26,7 +26,7 @@ export type LayoutProps = {
 export default function Layout({ children }: LayoutProps) {
   const year = new Date().getFullYear()
   return (
-    <div className="site">
+    <div className="site layout-wrapper">
       <header className="site-header">
         <div className="container site-header-inner">
           <div className="site-brand">
@@ -48,11 +48,11 @@ export default function Layout({ children }: LayoutProps) {
         </div>
       </header>
 
-      <main className="site-main">
+      <main className="site-main layout-main">
         {children}
       </main>
 
-      <footer className="site-footer">
+      <footer className="site-footer footer">
         <div className="container site-footer-inner">
           <div>© {year} DedVill KFT – Minden jog fenntartva.</div>
           <div>
