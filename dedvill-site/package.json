@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "build": "tsc -b && vite build",
+    "postbuild": "echo.> dist/.nojekyll",
     "predeploy": "npm run build",
-    "deploy": "gh-pages --nojekyll -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
