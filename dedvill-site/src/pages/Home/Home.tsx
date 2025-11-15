@@ -27,7 +27,7 @@ export default function Home() {
             <p className="hero-sub">
               DedVill KFT: lakossági villanyszerelés, gyors hibaelhárítás és
               villamos biztonsági felülvizsgálat (VBF). Megbízható szakértelem,
-              precíz kivitelezés és pontos határidők Budapesten és környékén.
+              precíz kivitelezés és pontos határidők Szigetszentmiklóson és környékén.
             </p>
             <a className="btn-primary" href="tel:+36209540800">Hívás: +36 20 954 0800</a>
           </div>
