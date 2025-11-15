@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import './Layout.css'
-import React from 'react'
+import React, { useState } from 'react'
 import dedvillLogo from "../../assets/dedvill_transparent.png";
 
 export type LayoutProps = {
@@ -9,8 +9,18 @@ export type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   const year = new Date().getFullYear()
+  const [menuOpen, setMenuOpen] = useState(false)
+
+  function toggleMenu() {
+    setMenuOpen(prev => !prev)
+  }
+
+  function closeMenu() {
+    setMenuOpen(false)
+  }
+
   return (
-    <div className="site layout-wrapper">
+    <div className={`site layout-wrapper${menuOpen ? ' menu-open' : ''}`}>      
       <header className="site-header">
         <div className="container site-header-inner">
           <div className="site-brand">
@@ -23,13 +33,39 @@ export default function Layout({ children }: LayoutProps) {
             </div>
           </div>
           <nav className="site-nav" aria-label="Fő navigáció">
-            <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">Főoldal</NavLink>
-            <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/rolunk">Rólunk</NavLink>
-            <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/szolgaltatasok">Szolgáltatások</NavLink>
-            <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/vbf">VBF</NavLink>
-            <NavLink className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/kapcsolat">Kapcsolat</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/">Főoldal</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/rolunk">Rólunk</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/szolgaltatasok">Szolgáltatások</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/vbf">VBF</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/kapcsolat">Kapcsolat</NavLink>
           </nav>
+          <button
+            type="button"
+            className="hamburger"
+            aria-label="Menü megnyitása"
+            aria-expanded={menuOpen}
+            aria-controls="mobile-nav"
+            onClick={toggleMenu}
+          >
+            <span className="hamburger-bar" />
+            <span className="hamburger-bar" />
+            <span className="hamburger-bar" />
+          </button>
         </div>
+        <nav
+          id="mobile-nav"
+          className={`mobile-nav${menuOpen ? ' open' : ''}`}
+          aria-label="Mobil navigáció"
+        >
+          <div className="mobile-nav-inner">
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/">Főoldal</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/rolunk">Rólunk</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/szolgaltatasok">Szolgáltatások</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/vbf">VBF</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/kapcsolat">Kapcsolat</NavLink>
+          </div>
+        </nav>
+        {menuOpen && <div className="mobile-backdrop" onClick={closeMenu} aria-hidden="true" />}
       </header>
 
       <main className="site-main layout-main">

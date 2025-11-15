@@ -7,6 +7,20 @@
 input, textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--color-border); border-radius: 10px; font: inherit; }
 textarea { min-height: 120px; resize: vertical; }
 
+.form-status {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.form-status.success {
+  color: #059669; /* szép zöld */
+}
+
+.form-status.error {
+  color: #dc2626; /* hiba piros */
+}
+
+
 @media (max-width: 920px) {
   .contact-grid { grid-template-columns: 1fr; }
 }
