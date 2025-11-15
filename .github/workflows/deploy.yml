@@ -19,12 +19,17 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: "18"
 
       - name: Install dependencies
         run: npm install
 
+      - name: Fix Vite permissions
+        run: chmod +x node_modules/.bin/*
+
       - name: Build project
+        env:
+          PATH: "${{ github.workspace }}/dedvill-site/node_modules/.bin:${{ env.PATH }}"
         run: npm run build
 
       - name: Upload artifact
