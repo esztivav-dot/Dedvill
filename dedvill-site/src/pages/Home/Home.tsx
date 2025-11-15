@@ -1,4 +1,6 @@
 import './Home.css'
+import dedvillLogo from "../../assets/dedvill_transparent.png";
+
 
 // Simple SVG icon as string
 const boltIcon = (
@@ -30,7 +32,10 @@ export default function Home() {
             <a className="btn-primary" href="tel:+36209540800">Hívás: +36 20 954 0800</a>
           </div>
           <div className="hero-right">
-            <div className="hero-logo" aria-hidden="true"></div>
+           <div className="hero-logo">
+  <img src={dedvillLogo} alt="DedVill logó" className="hero-logo-img" />
+</div>
+
           </div>
         </div>
       </section>
@@ -69,14 +74,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="section-title">Térképes előnézet</div>
-          <div className="map-preview">
-            Itt jelenik meg a térkép. Később ide illeszthető Google Maps iframe.
-          </div>
-        </div>
-      </section>
+  
     </div>
   )
 }

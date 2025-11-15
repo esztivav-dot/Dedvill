@@ -11,13 +11,15 @@
 
 /* Brand */
 .site-brand { display: flex; align-items: center; gap: 12px; }
+/* Clean logo container without decorative backgrounds or borders */
 .site-logo {
-  width: 42px; height: 42px; border-radius: 50%;
-  display: grid; place-items: center;
-  background: radial-gradient(60% 60% at 50% 35%, #39a6ff 0%, var(--color-primary) 60%);
-  box-shadow: 0 10px 24px rgba(9,132,216,0.35);
-  border: 1px solid #b9dbff;
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
 }
+/* Larger, raw PNG logo */
+.logo-img { height: 70px; width: auto; display: block; }
 .site-brand-text { line-height: 1.1; }
 .site-brand-title { font-weight: 800; }
 .site-brand-sub { font-size: 0.8rem; color: #3b4a64; }
@@ -34,23 +36,33 @@
 }
 
 /* Footer */
-.site-footer { background: #0b1220; color: #e5eefc; padding: 24px 0; margin-top: 48px; }
-.site-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.site-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  padding: 14px 20px;
+  background-color: #0e1b2a;
+  color: #e5eefc;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.2);
+}
+.site-footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; width: 100%; }
 .site-footer a { color: #90cdfa; }
 
 /* Main */
 .site-main { padding-top: 12px; }
+.layout-main { padding-bottom: 80px; }
 
 @media (max-width: 720px) {
   .site-footer-inner { flex-direction: column; text-align: center; }
 }
 
-/* Sticky footer layout wrapper */
-.layout-wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+/* Sticky footer layout wrapper (no footer flex push used now) */
+.layout-wrapper { min-height: 100vh; display: flex; flex-direction: column; }
 
 .layout-main {
   flex: 1;
@@ -61,6 +73,4 @@
   display: block;
 }
 
-.footer {
-  margin-top: auto;
-}
+/* Footer is fixed; no flex push needed */

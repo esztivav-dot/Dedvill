@@ -5,7 +5,17 @@
 .hero-title { font-size: 2.2rem; font-weight: 900; margin: 0 0 12px; }
 .hero-sub { color: #34445f; line-height: 1.6; margin-bottom: 18px; }
 .hero-right { display: grid; place-items: center; }
-.hero-logo { width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; background: radial-gradient(60% 60% at 50% 35%, #39a6ff 0%, var(--color-primary) 60%); box-shadow: 0 20px 40px rgba(9,132,216,0.25); border: 1px solid #b9dbff; }
+.hero-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo-img {
+  width: 300px;
+  height: auto;
+}
+
 
 /* Services */
 .services { margin-top: 28px; }
