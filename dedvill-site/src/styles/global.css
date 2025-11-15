@@ -1,0 +1,61 @@
+/* Global variables */
+:root {
+  --color-primary: #0984d8; /* electric blue */
+  --color-primary-dark: #0662a3; /* darker blue */
+  --color-bg: #f5f7fb;
+  --color-text: #111827;
+  --color-white: #ffffff;
+  --color-border: #d0d7e2;
+  --radius-card: 18px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.08);
+  --transition-fast: 0.2s ease-out;
+  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+/* Base reset & layout */
+* { box-sizing: border-box; }
+html, body, #root { height: 100%; }
+html, body { padding: 0; margin: 0; }
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background:
+    radial-gradient(1200px 600px at 20% 0%, #ffffff 0%, #f0f6ff 50%, #e9f3ff 100%),
+    var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { max-width: 100%; display: block; height: auto; }
+a { color: inherit; text-decoration: none; }
+
+/* Utilities */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 20px; }
+.section { padding: 56px 0; }
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+  margin-bottom: 16px;
+}
+.btn-primary {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  color: var(--color-white);
+  background: linear-gradient(135deg, var(--color-primary), #39a6ff);
+  box-shadow: 0 6px 18px rgba(9, 132, 216, 0.35);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+}
+.btn-primary:hover { transform: translateY(-1px); box-shadow: 0 10px 24px rgba(9, 132, 216, 0.45); opacity: 0.95; }
+.card { background: var(--color-white); border-radius: var(--radius-card); box-shadow: var(--shadow-soft); border: 1px solid var(--color-border); }
+
+/* Responsive grid helper */
+.grid-auto-fit { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+
+/* Site shell */
+.site { min-height: 100%; display: flex; flex-direction: column; }
+.site-main { flex: 1; }

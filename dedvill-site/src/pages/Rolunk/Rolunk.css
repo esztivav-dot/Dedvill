@@ -1,0 +1,7 @@
+/* About page */
+.about { display: grid; gap: 18px; }
+.pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.pillar { padding: 18px; text-align: center; }
+.pillar-title { font-weight: 800; color: var(--color-primary-dark); }
+.decor { position: relative; }
+.decor::after { content: ""; position: absolute; right: -20px; top: -20px; width: 80px; height: 80px; border-radius: 999px; background: rgba(9,132,216,0.12); filter: blur(6px); }

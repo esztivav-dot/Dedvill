@@ -1,0 +1,7 @@
+/* Services page */
+.services-grid { margin-top: 14px; }
+.service-block { padding: 20px; }
+.service-block h3 { margin: 0 0 8px; }
+.service-block ul { margin: 0; padding-left: 18px; }
+.service-block li { margin: 6px 0; }
+.check { color: var(--color-primary); font-weight: 800; margin-right: 6px; }

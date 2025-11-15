@@ -1,0 +1,5 @@
+/* VBF page */
+.vbf-logo { width: 160px; height: 160px; border-radius: 999px; display: grid; place-items: center; margin: 0 auto 16px; background: radial-gradient(60% 60% at 50% 35%, #39a6ff 0%, var(--color-primary) 60%); box-shadow: 0 24px 48px rgba(9,132,216,0.25); border: 1px solid #b9dbff; }
+.vbf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 18px; margin-top: 14px; }
+.vbf-block { padding: 20px; }
+.vbf-cta { text-align: center; padding: 24px; border: 1px solid var(--color-border); background: #f9fcff; border-radius: 16px; }
