@@ -11,8 +11,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-        with:
-          path: dedvill
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -20,19 +18,17 @@ jobs:
           node-version: "18"
 
       - name: Install dependencies
-        working-directory: ./dedvill/dedvill-site
+        working-directory: ./dedvill-site
         run: npm install
 
       - name: Build project
-        working-directory: ./dedvill/dedvill-site
-        env:
-          PATH: "${{ github.workspace }}/dedvill/dedvill-site/node_modules/.bin:${{ env.PATH }}"
+        working-directory: ./dedvill-site
         run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dedvill/dedvill-site/dist
+          path: ./dedvill-site/dist
 
   deploy:
     needs: build
