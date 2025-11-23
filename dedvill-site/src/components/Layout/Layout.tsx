@@ -37,6 +37,7 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/rolunk">Rólunk</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/szolgaltatasok">Szolgáltatások</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/vbf">VBF</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/galeria">Galéria</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`} to="/kapcsolat">Kapcsolat</NavLink>
           </nav>
           <button
@@ -62,6 +63,7 @@ export default function Layout({ children }: LayoutProps) {
             <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/rolunk">Rólunk</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/szolgaltatasok">Szolgáltatások</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/vbf">VBF</NavLink>
+            <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/galeria">Galéria</NavLink>
             <NavLink onClick={closeMenu} className={({ isActive }) => `mobile-link${isActive ? ' active' : ''}`} to="/kapcsolat">Kapcsolat</NavLink>
           </div>
         </nav>

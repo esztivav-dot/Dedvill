@@ -1,5 +1,6 @@
 import './Home.css'
-import dedvillLogo from "../../assets/dedvill_transparent.png";
+
+import vbfLogo from "../../assets/vbf_logo.png";
 
 
 // Simple SVG icon as string
@@ -11,12 +12,16 @@ const boltIcon = (
 
 export default function Home() {
   const pricing: { name: string; price: string }[] = [
-    { name: 'Kismegszakító csere', price: '5 000 Ft-tól' },
-    { name: 'Konnektor / kapcsoló csere', price: '4 500 Ft-tól' },
-    { name: 'Hibaelhárítás kiszállással', price: '15 000 Ft-tól' },
-    { name: 'Mérőhely szabványosítás', price: 'Árajánlat alapján' },
-    { name: 'VBF felülvizsgálat', price: 'Árajánlat alapján' }
-  ]
+  { name: 'Kismegszakító csere', price: '5 000 Ft-tól' },
+  { name: 'Konnektor / kapcsoló csere', price: '4 500 Ft-tól' },
+  { name: 'Hibaelhárítás kiszállással', price: '15 000 Ft-tól' },
+  { name: 'Mérőhely szabványosítás', price: 'Árajánlat alapján' },
+
+  // ÚJ VBF sorok
+  { name: 'VBF felülvizsgálat – kiszállási díj', price: '15 000 Ft + Áfa' },
+  { name: 'VBF felülvizsgálat – jegyzőkönyv készítés', price: '35 000 Ft + Áfa' },
+]
+
 
   return (
     <div>
@@ -33,7 +38,7 @@ export default function Home() {
           </div>
           <div className="hero-right">
            <div className="hero-logo">
-  <img src={dedvillLogo} alt="DedVill logó" className="hero-logo-img" />
+  <img src={vbfLogo} alt="VBF logó" className="hero-logo-img" />
 </div>
 
           </div>

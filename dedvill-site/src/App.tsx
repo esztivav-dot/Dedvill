@@ -5,6 +5,7 @@ import Rolunk from './pages/Rolunk/Rolunk'
 import Szolgaltatasok from './pages/Szolgaltatasok/Szolgaltatasok'
 import VBF from './pages/VBF/VBF'
 import Kapcsolat from './pages/Kapcsolat/Kapcsolat'
+import Gallery from './pages/Gallery/Gallery'
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
           <Route path="/rolunk" element={<Rolunk />} />
           <Route path="/szolgaltatasok" element={<Szolgaltatasok />} />
           <Route path="/vbf" element={<VBF />} />
+          <Route path="/galeria" element={<Gallery />} />
           <Route path="/kapcsolat" element={<Kapcsolat />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
