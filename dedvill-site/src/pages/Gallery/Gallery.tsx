@@ -9,10 +9,11 @@ type ManifestData = string[]
 export default function Gallery() {
   const [files, setFiles] = useState<string[]>([])
   const [useFallback, setUseFallback] = useState(true)
+  const base = (import.meta as any).env?.BASE_URL ?? '/'
 
   useEffect(() => {
     // Próbáljuk beolvasni a public/gallery/manifest.json fájlt (opcionális).
-    fetch('gallery/manifest.json', { cache: 'no-store' })
+    fetch(`${base}gallery/manifest.json`, { cache: 'no-store' })
       .then(r => {
         if (!r.ok) throw new Error('No manifest')
         return r.json() as Promise<ManifestData>
@@ -38,7 +39,7 @@ export default function Gallery() {
         {files.map(name => (
           <div key={name} className="gallery-item">
             <img
-              src={`gallery/${name}`}
+              src={`${base}gallery/${name}`}
               alt={`Galéria kép ${name}`}
               loading="lazy"
               className="gallery-image"

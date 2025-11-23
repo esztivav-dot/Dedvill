@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "predev": "node scripts/generate-gallery-manifest.mjs",
     "build": "tsc -b && vite build",
+    "prebuild": "node scripts/generate-gallery-manifest.mjs",
     "postbuild": "node -e \"require('fs').writeFileSync('dist/.nojekyll', '')\"",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
