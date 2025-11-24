@@ -1,5 +1,5 @@
 import './Home.css'
-
+import dedvillLogo from "../../assets/dedvill_transparent.png";
 import vbfLogo from "../../assets/vbf_logo.png";
 
 
@@ -27,6 +27,9 @@ export default function Home() {
     <div>
       <section className="section hero">
         <div className="container hero-inner">
+             <div className="hero-logo">
+  <img src={dedvillLogo} alt="DedVill logó" className="hero-logo-img" />
+</div>
           <div className="hero-card">
             <h1 className="hero-title">Villanyszerelés A–Z-ig</h1>
             <p className="hero-sub">

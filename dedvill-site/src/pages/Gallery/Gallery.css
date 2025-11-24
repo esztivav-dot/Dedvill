@@ -39,7 +39,70 @@
 .gallery-item:hover .gallery-image {
   transform: scale(1.04);
 }
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-out;
+  z-index: 9999;
+}
 
+/* Nagy kép */
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  box-shadow: 0 0 30px rgba(0,0,0,0.6);
+  animation: zoomIn 0.25s ease;
+  cursor: default;
+}
+
+/* NAV gombok */
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 14px 18px;
+  font-size: 2.5rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10000;
+  user-select: none;
+  transition: 0.25s;
+}
+
+.lightbox-nav:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.lightbox-nav.left {
+  left: 40px;
+}
+
+.lightbox-nav.right {
+  right: 40px;
+}
+
+/* Animáció */
+@keyframes zoomIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+/* Hover effekt a kis képeken */
+.gallery-item:hover .gallery-image {
+  transform: scale(1.03);
+  transition: 0.25s;
+  cursor: zoom-in;
+}
 @media (hover: hover) and (pointer: fine) {
   .gallery-item:hover {
     box-shadow: 0 4px 14px rgba(0,0,0,0.14);

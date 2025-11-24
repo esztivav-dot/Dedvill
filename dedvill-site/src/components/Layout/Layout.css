@@ -19,7 +19,7 @@
   align-items: center;
 }
 /* Larger, raw PNG logo */
-.logo-img { height: 70px; width: auto; display: block; }
+.logo-img { height: 90px; width: auto; display: block; }
 .site-brand-text { line-height: 1.1; }
 .site-brand-title { font-weight: 800; }
 .site-brand-sub { font-size: 0.8rem; color: #3b4a64; }
