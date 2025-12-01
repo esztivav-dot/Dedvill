@@ -9,7 +9,7 @@ const supabase = createClient(
 )
 
 
-const BUCKET = "Images"
+const BUCKET = "images"
 
 const MAX_FALLBACK = 200
 type ManifestData = string[]
@@ -57,10 +57,14 @@ export default function Gallery() {
     loadFromSupabase()
   }, [])
 
-
+console.log(
+  supabase.storage.from(BUCKET).getPublicUrl("1.jpg").data.publicUrl
+)
   // --- URL generálás Supabase-ből ---
-  const getUrl = (name: string) =>
-    supabase.storage.from(BUCKET).getPublicUrl(name).data.publicUrl
+const getUrl = (name: string) => {
+  return supabase.storage.from(BUCKET).getPublicUrl(name).data.publicUrl
+}
+
 
 
   // --- Lapozás lightboxban ---
