@@ -59,8 +59,18 @@ export default function Kapcsolat() {
               <p>Munkavégzés helye: Budapest és környéke</p>
             </div>
             <div className="map-box">
-              Térképes előnézet (Google Maps iframe helye)
-            </div>
+  <iframe
+    title="Térkép - Szigetszentmiklós Ifjúság útja 2"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2688.2626752258736!2d19.04240877722615!3d47.334148871167874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dcb59ac087bb%3A0x2f1c6e44fbf9f69f!2zU3ppZ2V0c3plbnRtaWtsw7NzLCBJZmp1c8OhZyDDunRqYSAyLCAyMzEw!5e0!3m2!1shu!2shu!4v1733075774701!5m2!1shu!2shu"
+    width="100%"
+    height="250"
+    style={{ border: 0 }}
+    allowFullScreen={false}
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  />
+</div>
+
           </div>
 
           {/* JOBB OLDAL – űrlap */}
