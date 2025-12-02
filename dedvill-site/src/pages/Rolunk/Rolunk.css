@@ -5,3 +5,18 @@
 .pillar-title { font-weight: 800; color: var(--color-primary-dark); }
 .decor { position: relative; }
 .decor::after { content: ""; position: absolute; right: -20px; top: -20px; width: 80px; height: 80px; border-radius: 999px; background: rgba(9,132,216,0.12); filter: blur(6px); }
+h4 {padding-left: 28px;}
+.area-card ul {
+  margin: 0;
+  padding-left: 28px;
+}
+
+.area-card li {
+  margin: 4px 0;
+}
+
+.section-subtitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}

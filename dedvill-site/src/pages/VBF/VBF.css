@@ -6,3 +6,28 @@
 .vbf-pricing {
   grid-column: 1 / -1;   /* teljes sor szélesség */
 }
+.big-number {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #d21f3c;
+  margin: 0 8px;
+  display: inline-block;
+}
+
+/* Kártyák és a részletes blokk közötti tér */
+.vbf-space {
+  height: 40px;
+}
+
+/* Kattintható "Részletes tájékoztató itt" */
+.details-link {
+  color: #d21f3c;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: 0.2s;
+}
+
+.details-link:hover {
+  color: #ff355e;
+}

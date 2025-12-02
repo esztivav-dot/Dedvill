@@ -1,7 +1,38 @@
 /* Services page */
-.services-grid { margin-top: 14px; }
-.service-block { padding: 20px; }
+.services-grid { 
+  margin-top: 14px; 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  align-items: stretch; /* minden kártya azonos magasságú */
+}
+
+.service-block { 
+  padding: 20px; 
+  display: flex;
+  flex-direction: column; /* fontos a gomb lenti pozicionálásához */
+  height: 100%;
+  background: #fff;
+  border-radius: 14px;
+}
+
 .service-block h3 { margin: 0 0 8px; }
 .service-block ul { margin: 0; padding-left: 18px; }
 .service-block li { margin: 6px 0; }
 .check { color: var(--color-primary); font-weight: 800; margin-right: 6px; }
+
+.more-btn {
+  margin-top: auto;   /* 🔥 EZ teszi fixen legalulra */
+  background: #005bbb;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.more-btn:hover {
+  background: #0073e6;
+}
