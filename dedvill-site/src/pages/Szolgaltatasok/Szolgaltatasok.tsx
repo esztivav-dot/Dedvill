@@ -1,6 +1,6 @@
 import './Szolgaltatasok.css'
 import { useState } from 'react'
-import Modal from '../../components/modal'
+import Modal from '../../components/Modal'
 import { Link } from 'react-router-dom'
 
 function Item({ children }: { children: string }) {
