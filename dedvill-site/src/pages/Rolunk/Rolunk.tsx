@@ -53,7 +53,7 @@ export default function Rolunk() {
           Mely településeken dolgozunk?
         </div>
 
-        <p>Csepel sziget , Főleg Szigetszentmiklós és környéke. </br>
+        <p>Csepel sziget , Főleg Szigetszentmiklós és környéke. <br />
            
           Alább megtalálhatók azok a környékek, ahol rendszeresen dolgozunk:
         </p>
