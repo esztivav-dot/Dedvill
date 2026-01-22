@@ -19,6 +19,7 @@ export default function Home() {
 
   // ÚJ VBF sorok
   { name: 'VBF felülvizsgálat – kiszállási díj', price: '15 000 Ft + Áfa' },
+  {name: 'VBF felülvizsgálat - műszeres mérés, hibalista készítése', price:'25.000 Ft + Áfa'},
   { name: 'VBF felülvizsgálat – jegyzőkönyv készítés', price: '35 000 Ft + Áfa' },
 ]
 

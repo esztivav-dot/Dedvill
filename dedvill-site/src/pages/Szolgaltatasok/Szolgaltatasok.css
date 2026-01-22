@@ -1,19 +1,26 @@
 /* Services page */
-.services-grid { 
-  margin-top: 14px; 
+.services-grid {
+  margin-top: 14px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 20px;
   align-items: stretch; /* minden kártya azonos magasságú */
 }
 
-.service-block { 
-  padding: 20px; 
+.service-block {
+  padding: 20px;
   display: flex;
   flex-direction: column; /* fontos a gomb lenti pozicionálásához */
   height: 100%;
   background: #fff;
   border-radius: 14px;
+
+  /* hover érzet transform nélkül (modal-biztos) */
+  transition: box-shadow 0.25s ease;
+}
+
+.service-block:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
 }
 
 .service-block h3 { margin: 0 0 8px; }
@@ -35,4 +42,27 @@
 
 .more-btn:hover {
   background: #0073e6;
+}
+
+/* ===== Service képek (egységes méret) ===== */
+.service-img {
+  width: 100%;
+  height: 180px;              /* 🔒 fix magasság */
+  margin-bottom: 12px;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #f1f3f6;        /* betöltés közbeni fallback */
+}
+
+.service-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* 🔑 ettől lesz egységes */
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+/* finom hover zoom csak a képen */
+.service-block:hover .service-img img {
+  transform: scale(1.06);
 }

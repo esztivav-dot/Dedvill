@@ -1,12 +1,14 @@
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
+  background: rgba(0, 0, 0, 0.45);
   display: flex;
   justify-content: center;
   align-items: center;
   animation: fadeIn 0.25s ease forwards;
-  z-index: 999;
+
+  z-index: 99999;       /* 🔥 tuti minden felett */
+  isolation: isolate;   /* 🔒 külön stacking context */
 }
 
 .modal-window {
@@ -16,13 +18,17 @@
   border-radius: 10px;
   padding: 20px;
   animation: slideUp 0.3s ease;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+
+  max-height: calc(100vh - 48px); /* ✅ ne lógjon ki */
+  overflow: auto;                 /* ✅ görgethető hosszú tartalomnál */
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 12px;
 }
 
 .modal-header h2 {
@@ -36,6 +42,13 @@
   border: none;
   font-size: 1.4rem;
   cursor: pointer;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.06);
 }
 
 .modal-body {

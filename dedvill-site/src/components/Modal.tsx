@@ -5,8 +5,8 @@ export default function Modal({
   children,
   onClose
 }: {
-  title: string,
-  children: React.ReactNode,
+  title: string
+  children: React.ReactNode
   onClose: () => void
 }) {
   return (
@@ -14,11 +14,12 @@ export default function Modal({
       <div className="modal-window" onClick={(e) => e.stopPropagation()}>
         <div className="modal-header">
           <h2>{title}</h2>
-          <button className="modal-close" onClick={onClose}>✕</button>
+          <button className="modal-close" onClick={onClose} aria-label="Bezárás">
+            ✕
+          </button>
         </div>
-        <div className="modal-body">
-          {children}
-        </div>
+
+        <div className="modal-body">{children}</div>
       </div>
     </div>
   )
